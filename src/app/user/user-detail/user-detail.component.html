@@ -1,0 +1,54 @@
+<div class="d-flex h-75 justify-content-center align-items-center">
+  <mat-card class="w-75">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>Create User</mat-card-title>
+      <mat-card-subtitle>Add a new user to the database</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="d-flex justify-content-center align-items-center">
+        <div class="w-75">
+        <form action="" id="user-form">
+          <mat-form-field class="w-100">
+            <mat-label>User Name</mat-label>
+            <input matInput placeholder="Unique user name" value="" required>
+          </mat-form-field>
+
+          <mat-form-field class="w-100">
+            <mat-label>First Name</mat-label>
+            <input matInput placeholder="First.." value="" required>
+          </mat-form-field>
+
+          <mat-form-field class="w-100">
+            <mat-label>Last Name</mat-label>
+            <input matInput placeholder="Last.." value="" required>
+          </mat-form-field>
+
+          <mat-form-field class="w-100">
+            <mat-label>Email Address</mat-label>
+            <input matInput placeholder="Email.." value="" required>
+          </mat-form-field>
+
+          <mat-form-field class="w-100">
+            <mat-label>Department</mat-label>
+            <input matInput placeholder="Department.." value="" required>
+          </mat-form-field>
+
+          <mat-radio-group aria-label="Select an option" required [value]="true">
+            <mat-radio-button [value]="true">Active</mat-radio-button>
+            <mat-radio-button [value]="false">Inactive</mat-radio-button>
+          </mat-radio-group>
+
+        </form>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>SUBMIT</button>
+      <button mat-button>CANCEL</button>
+    </mat-card-actions>
+    <mat-card-footer>
+      <mat-progress-bar [mode]="progressBar"></mat-progress-bar>
+    </mat-card-footer>
+  </mat-card>
+</div>
