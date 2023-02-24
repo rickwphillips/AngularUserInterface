@@ -17,7 +17,15 @@ export class UserListComponent implements AfterViewInit {
   dataSource: UserListDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'user_name', 'name', 'email', 'department', 'status'];
+  displayedColumns = [
+    'id',
+    'user_name',
+    'name',
+    'email',
+    'department',
+    'status',
+    'action'
+  ];
 
   constructor(private userService: UserService) {
     this.dataSource = new UserListDataSource();

@@ -20,4 +20,10 @@ export class UserService {
   getUsers() {
     return [...this._users];
   }
+
+  getUserById( id: number ): User | undefined {
+    const user = this._users.find(u => +u.user_id === +id);
+    console.log(user, id)
+    return user ? {...user} : undefined;
+  }
 }

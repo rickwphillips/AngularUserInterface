@@ -34,13 +34,20 @@
         <mat-icon *ngIf="!row.user_status" fontIcon="cancel"></mat-icon>
       </td>
     </ng-container>
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Active Status</th>
+      <td mat-cell *matCellDef="let row">
+        <mat-icon [routerLink]="'/user/edit/' + row.user_id" fontIcon="edit" class="mx-2" [matTooltip]="'Edit ' + row.user_name"></mat-icon>
+        <mat-icon fontIcon="delete"  class="mx-2" [matTooltip]="'Delete ' + row.user_name"></mat-icon>
+      </td>
+    </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
 
   <mat-paginator #paginator
-      [length]="dataSource?.data?.length"
+      [length]="dataSource.data.length"
       [pageIndex]="0"
       [pageSize]="10"
       [pageSizeOptions]="[5, 10, 20]"

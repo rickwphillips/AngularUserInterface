@@ -5,6 +5,10 @@ import { UserListComponent } from "./user/user-list/user-list.component";
 
 const appRoutes: Route[] = [
   {
+    path: "user/edit/:id",
+    component: UserDetailComponent
+  },
+  {
     path: "user/list",
     component: UserListComponent
   },
