@@ -3,25 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
-
-// TODO: Replace this with your own data model type
-export interface UserListItem {
-  user_id: number,
-  user_name: string,
-  first_name: string,
-  last_name: string,
-  email: string,
-  user_status: boolean,
-  department: string
-}
-
-// TODO: replace this with real data from your application
-const EXAMPLE_DATA: UserListItem[] = [
-  {user_id: 1, user_name: 'admin', first_name: 'admin', last_name: 'example', email: 'admin@example.com', department: 'IT', user_status: true},
-  {user_id: 2, user_name: 'bobross', first_name: 'Bob', last_name: 'Ross', email: 'bob@example.com', department: 'Sales', user_status: true},
-  {user_id: 3, user_name: 'alicew', first_name: 'Alice', last_name: 'Wonderland', email: 'alice@example.com', department: 'Sales', user_status: true},
-  {user_id: 4, user_name: 'jerryt', first_name: 'Jerry', last_name: 'Woods', email: 'jwoods@example.com', department: 'IT', user_status: false},
-];
+import { UserListItem } from "../user.model";
 
 /**
  * Data source for the UserList view. This class should
@@ -29,12 +11,14 @@ const EXAMPLE_DATA: UserListItem[] = [
  * (including sorting, pagination, and filtering).
  */
 export class UserListDataSource extends DataSource<UserListItem> {
-  data: UserListItem[] = EXAMPLE_DATA;
+  data: UserListItem[] = [];
   paginator: MatPaginator | undefined;
   sort: MatSort | undefined;
 
-  constructor() {
+  constructor(users: UserListItem[]) {
     super();
+    this.data = users;
+
   }
 
   /**

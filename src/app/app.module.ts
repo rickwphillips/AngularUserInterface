@@ -24,6 +24,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTooltipModule } from "@angular/material/tooltip";
+import { FormsModule } from "@angular/forms";
+import { MatSelectModule } from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -53,7 +55,9 @@ import { MatTooltipModule } from "@angular/material/tooltip";
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatTooltipModule
+    MatTooltipModule,
+    FormsModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

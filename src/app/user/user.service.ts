@@ -9,7 +9,8 @@ export class UserService {
   private _users: User[] = [
     new User(1, 'admin', 'admin', 'example', 'admin@example.com', true, 'IT'),
     new User(2, 'bobross', 'Bob', 'Ross', 'bob@example.com', true, 'Sales'),
-    new User(2, 'awonderland', 'Alice', 'Wonderland', 'alice@example.com', true, 'Sales'),
+    new User(3, 'awonderland', 'Alice', 'Wonderland', 'alice@example.com', true, 'Sales'),
+    new User(4, 'timburton', 'Tim', 'Burton', 'tburton@example.com', false, 'IT'),
   ];
 
   users$ = new Subject<User[]>();

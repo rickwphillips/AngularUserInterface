@@ -35,8 +35,8 @@
       </td>
     </ng-container>
     <ng-container matColumnDef="action">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Active Status</th>
-      <td mat-cell *matCellDef="let row">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+      <td mat-cell *matCellDef="let row" style="cursor: pointer;">
         <mat-icon [routerLink]="'/user/edit/' + row.user_id" fontIcon="edit" class="mx-2" [matTooltip]="'Edit ' + row.user_name"></mat-icon>
         <mat-icon fontIcon="delete"  class="mx-2" [matTooltip]="'Delete ' + row.user_name"></mat-icon>
       </td>

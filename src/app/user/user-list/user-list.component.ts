@@ -2,8 +2,9 @@ import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
-import { UserListDataSource, UserListItem } from './user-list-datasource';
+import { UserListDataSource } from './user-list-datasource';
 import { UserService } from "../user.service";
+import { UserListItem } from "../user.model";
 
 @Component({
   selector: 'app-user-list',
@@ -28,7 +29,7 @@ export class UserListComponent implements AfterViewInit {
   ];
 
   constructor(private userService: UserService) {
-    this.dataSource = new UserListDataSource();
+    this.dataSource = new UserListDataSource(this.userService.getUsers());
   }
 
   ngAfterViewInit(): void {
