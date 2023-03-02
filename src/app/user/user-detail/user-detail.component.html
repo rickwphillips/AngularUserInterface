@@ -2,8 +2,8 @@
   <mat-card class="w-75">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Create User</mat-card-title>
-      <mat-card-subtitle>Add a new user to the database</mat-card-subtitle>
+      <mat-card-title>{{ user.user_id ? 'Update' : 'Create'}} User</mat-card-title>
+      <mat-card-subtitle>{{ user.user_id ? 'Update existing user information' : 'Add a new user to the database'}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
       <div class="d-flex justify-content-center align-items-center">
