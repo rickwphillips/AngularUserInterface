@@ -22,14 +22,14 @@ export class UserDetailComponent implements OnInit {
 
   ngOnInit() {
     const id = this.route.snapshot.params['id'];
-    if (!isNaN(id)) {
-      this.user = this.userService.getUserById(id) ?? this.getEmptyUser();
-    }
+
+    this.user = this.userService.getUserById(id) ?? this.getEmptyUser();
+
 
     this.route.params.subscribe(( params: Params ) => {
-      if (!isNaN(+params['id'])) {
-        this.user = this.userService.getUserById(+params['id']) ?? this.getEmptyUser();
-      }
+
+      this.user = this.userService.getUserById(params['id']) ?? this.getEmptyUser();
+
     })
   }
 

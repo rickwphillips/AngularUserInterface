@@ -12,7 +12,7 @@ export class User {
 }
 
 export interface UserListItem {
-  user_id: number,
+  user_id: number | string,
   user_name: string,
   first_name: string,
   last_name: string,
