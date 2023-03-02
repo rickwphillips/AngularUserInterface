@@ -67,11 +67,14 @@
                 [(ngModel)]="user.user_status"
                 name="user_status"
                 required>
-                <mat-option [value]="'1'">
+                <mat-option [value]="'A'">
                   Active
                 </mat-option>
-                <mat-option [value]="'0'">
+                <mat-option [value]="'I'">
                   Inactive
+                </mat-option>
+                <mat-option [value]="'T'">
+                  Terminated
                 </mat-option>
               </mat-select>
             </mat-form-field>
