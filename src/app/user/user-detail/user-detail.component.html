@@ -88,8 +88,9 @@
         <div>
           <button
             mat-button
-            (click)="f.onSubmit($event)"
-            [disabled]="!f.valid || !f.touched">
+            (click)="f.onSubmit($event)">
+           <!-- [disabled]="!f.valid || !f.touched" -->
+
             SUBMIT
           </button>
           <button

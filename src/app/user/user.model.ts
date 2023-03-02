@@ -5,7 +5,7 @@ export class User {
     public first_name: string,
     public last_name: string,
     public email: string,
-    public user_status: boolean,
+    public user_status: boolean | string,
     public department: string
   ) {
   }
@@ -17,7 +17,7 @@ export interface UserListItem {
   first_name: string,
   last_name: string,
   email: string,
-  user_status: boolean,
+  user_status: boolean | string,
   department: string
 }
 
