@@ -8,6 +8,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { HeaderComponent } from './header.component';
+import { RouterOutlet } from "@angular/router";
+import { MatSelectModule } from "@angular/material/select";
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -24,6 +26,8 @@ describe('HeaderComponent', () => {
         MatListModule,
         MatSidenavModule,
         MatToolbarModule,
+        RouterOutlet,
+        MatSelectModule
       ]
     }).compileComponents();
   }));

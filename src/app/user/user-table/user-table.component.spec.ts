@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UserTableComponent } from './user-table.component';
+import { HttpClient, HttpHandler } from "@angular/common/http";
+import { NO_ERRORS_SCHEMA } from "@angular/core";
 
 describe('UserTableComponent', () => {
   let component: UserTableComponent;
@@ -8,7 +10,9 @@ describe('UserTableComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UserTableComponent ]
+      declarations: [ UserTableComponent],
+      providers: [ HttpClient, HttpHandler ],
+      schemas: [ NO_ERRORS_SCHEMA ]
     })
     .compileComponents();
 

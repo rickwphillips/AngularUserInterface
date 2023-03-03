@@ -61,25 +61,26 @@
                 name="department">
             </mat-form-field>
 
-            <mat-form-field appearance="fill">
-              <mat-label>Status</mat-label>
-              <mat-select
-                [(ngModel)]="user.user_status"
-                name="user_status"
-                required>
-                <mat-option [value]="'A'">
-                  Active
-                </mat-option>
-                <mat-option [value]="'I'">
-                  Inactive
-                </mat-option>
-                <mat-option [value]="'T'">
-                  Terminated
-                </mat-option>
-              </mat-select>
-            </mat-form-field>
+            <div class="mat-form-field-appearance-fill w-50">
+            <mat-label>Status</mat-label>
+            <mat-select
+              class="m-2"
+              [(ngModel)]="user.user_status"
+              name="user_status"
+              required>
+              <mat-option [value]="'A'">
+                Active
+              </mat-option>
+              <mat-option [value]="'I'">
+                Inactive
+              </mat-option>
+              <mat-option [value]="'T'">
+                Terminated
+              </mat-option>
+            </mat-select>
+            </div>
 
-            <input hidden ngModel name="user_id"/>
+            <input matInput hidden [(ngModel)]="user.user_id" name="user_id"/>
 
           </form>
         </div>

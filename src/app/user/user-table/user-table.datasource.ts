@@ -1,14 +1,15 @@
 import { Injectable } from "@angular/core";
-import { CollectionViewer, DataSource } from "@angular/cdk/collections";
+import { DataSource } from "@angular/cdk/collections";
 import { UserListItem } from "../user.model";
-import { BehaviorSubject, Observable } from "rxjs";
+import { BehaviorSubject, Observable, take } from "rxjs";
 import { UserService } from "../user.service";
 
 @Injectable()
-export class UserTableDataSource extends DataSource<UserListItem>{
+export class UserTableDataSource extends DataSource<UserListItem> {
   users$ = new BehaviorSubject<UserListItem[]>([]);
   isLoading$ = new BehaviorSubject<boolean>(false);
-  constructor(private userService: UserService) {
+
+  constructor( private userService: UserService ) {
     super();
   }
 
@@ -22,10 +23,11 @@ export class UserTableDataSource extends DataSource<UserListItem>{
 
   loadUsers(): void {
     this.isLoading$.next(true);
-    this.userService.fetchUsers().subscribe( ({users}) => {
-      this.users$.next(users);
-      this.isLoading$.next(false)
-    })
+    this.userService.fetchUsers().pipe(take(1))
+      .subscribe(( { users } ) => {
+        this.users$.next(users);
+        this.isLoading$.next(false)
+      })
   }
 
 

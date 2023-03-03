@@ -5,6 +5,7 @@ import { UserService } from "../user.service";
 import { NgForm } from "@angular/forms";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { EMPTY_USER, User } from "../user.model";
+import { MatInputModule } from "@angular/material/input";
 
 @Component({
   selector: 'app-user-detail',
@@ -30,6 +31,7 @@ export class UserDetailComponent implements OnInit {
     this.user = this.userService.getUserById(id) ?? EMPTY_USER;
 
     this.route.params.subscribe(( params: Params ) => {
+      console.log(this.route.snapshot)
 
       this.user = this.userService.getUserById(params['id']) ?? EMPTY_USER;
 
