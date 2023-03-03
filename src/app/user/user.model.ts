@@ -11,6 +11,9 @@ export class User {
   }
 }
 
+export const EMPTY_USER: User = new User(0, '', '', '', '', "A", '');
+
+
 export interface UserListItem {
   user_id: number | string,
   user_name: string,
