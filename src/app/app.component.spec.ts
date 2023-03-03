@@ -75,14 +75,13 @@ describe('AppComponent', () => {
   it(`should have as title 'NgUserCRUDInterface'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('NgUserCRUDInterface');
+    expect(app.title).toEqual('Angular/Material User Form');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    console.log(compiled)
     expect(compiled.querySelector('#title')?.textContent).toContain('Angular User Portal');
   });
 });
